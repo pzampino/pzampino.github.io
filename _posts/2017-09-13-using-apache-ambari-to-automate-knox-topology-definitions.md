@@ -1,4 +1,4 @@
-# Introduction & Motivation
+## Introduction & Motivation
 
 Apache Knox acts as a proxy between Hadoop services and their consumers. Knox topology files define the mapping between requested services and their respective endpoints.
 To make Knox aware of new mappings, a Knox administrator has to determine the endpoints for every service to be proxied, and add them to a topology file (XML). When working
@@ -7,7 +7,7 @@ correct pieces of information to assemble these service endpoint URLs can be cha
 
 Fortunately, Ambari's API can be leveraged to automate the determination of these service endpoint URLs and, ultimately, the generation of Knox topology files.
 
-# Knox Topology Files
+## Knox Topology Files
 
 A topology file has to include a service entry for every Hadoop service to be proxied.
 
@@ -62,10 +62,10 @@ Similarly, for the
 Hopefully, you can see that correctly populating these service endpoint URLs is not a simple task, especially for individuals who are new to Hadoop, Ambari and/or Knox. HA deployments further increase this difficulty.
 
 
-# Automated Topology Generation With the Ambari API
+## Automated Topology Generation With the Ambari API
 
 
-## REST API
+### REST API
 
 The [Ambari REST API](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md) provides the ability to programmatically determine the disparate pieces of information necessary for assembling service endpoint URLs. Software can be written to correctly construct each of these service endpoint URLs from the correct properties, eliminating the potential for human error in identifying the appropriate properties and attempting to construct the corresponding URLs.
 
@@ -222,7 +222,7 @@ There are two especially interesting resources available from the Ambari API:
 
     In __Listing 3__, we see the *ssl-server*, *hdfs-site*, and *yarn-site* configurations, which are the active versions for the cluster at the time the resource was accessed. Again, an actual response would be more complete, including all of the active configurations for the cluster.
 
-# Topology Generation
+## Topology Generation
 
 Furthermore, a tool that subsequently generates Knox topology files based on the cluster configuration information would deal with the errors associated with copying endpoint URLs into the XML manually.
 
@@ -269,7 +269,7 @@ It is necessary to specify a *__cluster__* because a Knox topology is a mapping 
 
 You'll also notice that some of the *__services__* entries have an associated *__url__*, while others do not. This is simply a way to tell the tool that it doesn't need to discover these URLs. The endpoint URLs for those services for which there is no *__url__* specified will be populated from the details discovered from Ambari.
 
-# Running the tool
+## Running the tool
 
 A very simple script is provided for testing the TopologyBuilder python object. , and it's output looks like the following:
 
