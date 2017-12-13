@@ -61,11 +61,13 @@ Similarly, for the
 
 Hopefully, you can see that correctly populating these service endpoint URLs is not a simple task, especially for individuals who are new to Hadoop, Ambari and/or Knox. HA deployments further increase this difficulty.
 
+
 # Automated Topology Generation With the Ambari API
+
 
 ## REST API
 
-The <a href="https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md">Ambari REST API</a> provides the ability to programmatically determine the disparate pieces of information necessary for assembling service endpoint URLs. Software can be written to correctly construct each of these service endpoint URLs from the correct properties, eliminating the potential for human error in identifying the appropriate properties and attempting to construct the corresponding URLs.
+The [Ambari REST API](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md) provides the ability to programmatically determine the disparate pieces of information necessary for assembling service endpoint URLs. Software can be written to correctly construct each of these service endpoint URLs from the correct properties, eliminating the potential for human error in identifying the appropriate properties and attempting to construct the corresponding URLs.
 
 There are two especially interesting resources available from the Ambari API:
 
