@@ -50,13 +50,15 @@ continue providing the proxied *WEBHDFS* service to its clients.
 1. Set the __*gateway.cluster.config.monitor.ambari.enabled*__ property value to *true* in __*{GATEWAY_HOME}*/conf/gateway-site.xml__
 2. Restart the gateway
 3. Use Ambari to modify the *hdfs-site dfs.namenode.__http-address__* configuration property value as described in the example.
-4. Allow the gateway to notice the configuration change (watch the __*{GATEWAY_HOME}*/logs/gateway.log__ for the messages)
+4. Allow the gateway to notice the configuration change
+       (watch the __*{GATEWAY_HOME}*/logs/gateway.log__ for the messages)
 5. Review __*{GATEWAY_HOME}*/conf/topologies/docker-sandbox.xml__, and notice the change to the *WEBHDFS* service URL.
 
 <pre>
-Your sandbox must expose the new port you specified for the dfs.namenode.http-address
-property for Knox to be able to access the new endpoint; otherwise, even though the
-topology will be correct, requests will fail due to connection failure.
+Your sandbox must expose the new port you specified for the
+dfs.namenode.http-address property for Knox to be able to access
+the new endpoint; otherwise, even though the topology will be
+correct, requests will fail due to connection failure.
 </pre>
 
 # Summary
