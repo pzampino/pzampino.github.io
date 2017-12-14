@@ -197,16 +197,10 @@ Some of the benefits of maintaining this configuration in ZooKeeper include:
 
  6. *{GATEWAY_HOME}*/bin/knoxcli.sh upload-provider-config sandbox-providers.xml --registry-client sandbox-zookeeper-client
 
-    __*{GATEWAY_HOME}*/logs/gateway.log:__
-    <br><br><img src="/assets/img/log-downloaded-pc.png"/>
-
 	    ls -l {GATEWAY_HOME}/conf/shared-providers/
 
 
  7. *{GATEWAY_HOME}*/bin/knoxcli.sh upload-descriptor docker-sandbox.json --registry-client sandbox-zookeeper-client
-
-    __*{GATEWAY_HOME}*/logs/gateway.log:__
-    <br><br><img src="/assets/img/log-downloaded-descriptor-generated-topo.png"/>
 
 	    ls -l {GATEWAY_HOME}/conf/descriptors/
     	ls -l {GATEWAY_HOME}/conf/topologies/
@@ -242,24 +236,15 @@ Some of the benefits of maintaining this configuration in ZooKeeper include:
 
         {GATEWAY_HOME}/bin/knoxcli.sh upload-provider-config sandbox-providers.xml --registry-client sandbox-zookeeper-client
 
-    __*{GATEWAY_HOME}*/logs/gateway.log:__
-	<br><br><img src="/assets/img/log-pc-updated-topo-regen.png"/>
-
     __Note the *hostmap* provider in *{GATEWAY_HOME}*/conf/topologies/docker-sandbox.xml__
     <br><br><img src="/assets/img/topo-updated-providers.png"/>
 
  9. __*{GATEWAY_HOME}*/bin/knoxcli.sh delete-descriptor docker-sandbox.json --registry-client sandbox-zookeeper-client__
 
-    __*{GATEWAY_HOME}*/logs/gateway.log:__
-	<br><br><img src="/assets/img/log-desc-delete-topo-undeploy.png"/>
-
         ls -l {GATEWAY_HOME}/conf/descriptors/
     	ls -l {GATEWAY_HOME}/conf/topologies/
 
 10. __*{GATEWAY_HOME}*/bin/knoxcli.sh delete-provider-config sandbox-providers.xml --registry-client sandbox-zookeeper-client__
-
-    __*{GATEWAY_HOME}*/logs/gateway.log:__
-    <br><br><img src="/assets/img/log-pc-deleted.png"/>
 
         ls -l {GATEWAY_HOME}/conf/shared-providers/
 
