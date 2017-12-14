@@ -8,6 +8,7 @@ Another benefit of this new functionality, which is not mentioned in that articl
 affect generated Knox topologies by re-generating and re-deploying those topologies. Without this, deployed topologies can be easily disabled when any of the proxied
 Hadoop services' configuration changes in the cluster.
 
+<br>
 
 # Cluster Monitoring
 
@@ -39,6 +40,7 @@ For demonstration purposes, you may want to set this as low as 20 or 30 seconds.
         <description>The interval (in seconds) for polling Ambari for cluster configuration changes.</description>
     </property>
 
+<br>
 
 # Try It
 
@@ -61,6 +63,8 @@ the new endpoint; otherwise, even though the topology will be
 correct, requests will fail due to connection failure.
 </pre>
 
+<br>
+
 # Summary
 
 While it doesn't take long to describe, this feature is a significant addition to the value provided by Knox. The ability to dynamically adapt to cluster
@@ -72,5 +76,7 @@ __N.B., Statically-defined topologies (i.e., those deployed directly by a regula
 
 More details are available in the [User Guide](http://knox.apache.org/books/knox-0-14-0/user-guide.html).
 
+
+<br><br><br><br>
 
 

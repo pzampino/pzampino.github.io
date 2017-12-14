@@ -9,7 +9,7 @@ Knox 0.14.0 also includes the capability of consuming the inputs for these topol
 Knox instances can detect changes (additions/removals/modifications) to provider configurations and simple topology descriptors
 stored in ZooKeeper, and respond with corresponding topology changes.
 
-
+<br>
 
 # Remote Configuration Monitor
 
@@ -33,10 +33,12 @@ __/knox/config/descriptors/*{descriptor}*__| Add | *{descriptor}* is downloaded 
 __/knox/config/descriptors/*{descriptor}*__| Remove | *{descriptor}* is deleted from *{GATEWAY_HOME}*/conf/descriptors/, and corresponding topology is undeployed
 __/knox/config/descriptors/*{descriptor}*__| Modify | *{descriptor}* is downloaded to *{GATEWAY_HOME}*/conf/descriptors/, and topology re-generation and re-deployment is attempted
 
+<br>
+
 Multiple Knox instances may monitor the same ZooKeeper, and each will consume these changes to maintain topology consistency among them.
 Changes need only be applied once, to the resource maintained in ZooKeeper, to effect change in all the monitoring Knox instances.
 
-
+<br>
 
 # ZooKeeper
 
@@ -65,6 +67,7 @@ would define a registry client named __*sandbox-zookeeper-client*__, which the m
 More likely than not, production environments will employ a ZooKeeper ensemble, rather than a single node. In this case, the value of the address component
 of the registry client property value will be a comma-delimited list of the ZooKeeper hosts that comprise that ensemble (e.g., host1:2181,host2:2181,host3:2181).
 
+<br>
 
 ## Security
 
@@ -84,6 +87,7 @@ __keytab__ | Path to a keytab file | The keytab to use for Kerberos authenticati
 __useKeyTab__ | *true*, *false* | Whether or not to use the keytab for Kerberos authentication
 __useTicketCache__ | *true*, *false* | Whether or not to use the ticket cache for Kerberos authentication 
 
+<br>
 
 ### Examples:
 
@@ -104,6 +108,7 @@ __*Kerberos*__
     </property>
 
 
+<br>
 
 # Managing Content in ZooKeeper
 
@@ -120,8 +125,10 @@ __upload-descriptor *filePath* --registry-client *name* [--entry-name *entryName
 __delete-provider-config *providerConfig* --registry-client *name*__ | Deletes a provider configuration from the /knox/config/shared-providers znode.
 __delete-descriptor *descriptor* --registry-client *name*__ | Deletes a descriptor from the /knox/config/shared-providers znode.
 
+<br>
 More details about the available commands are available in [the Knox CLI section of the User Guide](http://knox.apache.org/books/knox-0-14-0/user-guide.html#Knox+CLI).
 
+<br>
 
 # Benefits
 
@@ -131,7 +138,7 @@ Some of the benefits of maintaining this configuration in ZooKeeper include:
     * Add or remove a descriptor once in ZooKeeper, and all monitoring Knox instances will update their topology deployments accordingly.
     * Update a single provider configuration once in ZooKeeper, and have it applied to every topology whose descriptor referenced it, across multiple Knox instances.
 
-
+<br>
 
 # Try It
 
@@ -248,6 +255,7 @@ Some of the benefits of maintaining this configuration in ZooKeeper include:
 
         ls -l {GATEWAY_HOME}/conf/shared-providers/
 
+<br>
 
 # A Note About Aliases
 
@@ -256,4 +264,5 @@ For example, if a simple descriptor *my-cluster.json* declares a *discovery-pwd-
 *my-cluster.json*. Otherwise, service URL discovery will not work because Knox won't be able to be authenticated by Ambari to get the service configuration details.
 
 
+<br><br><br><br>
 
