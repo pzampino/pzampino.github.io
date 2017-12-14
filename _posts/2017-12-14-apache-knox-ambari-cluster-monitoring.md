@@ -1,4 +1,4 @@
-# Apache Knox Ambari Cluster Monitoring
+# Introduction
 
 The [Apache Knox Dynamic Service Endpoint Discovery article](https://community.hortonworks.com/articles/154912/apache-knox-dynamic-service-endpoint-discovery.html)
 describes some exciting new functionality available in the 0.14.0 release of Apache Knox. The gateway is now able to dynamically determine the endpoint URLs of
@@ -45,15 +45,15 @@ For demonstration purposes, you may want to set this as low as 20 or 30 seconds.
 The [Apache Knox Dynamic Service Endpoint Discovery article](https://community.hortonworks.com/articles/154912/apache-knox-dynamic-service-endpoint-discovery.html)
 includes instructions for deploying topologies using simple descriptors, employing service URL discovery. Starting from there, you can enable the Ambari cluster
 monitoring, and make a cluster configuration change like the one described in this article. Then, you'll see how Knox responds to the change, and adapts to
-continue providing the proxied WEBHDFS service to its clients.
+continue providing the proxied *WEBHDFS* service to its clients.
 
-1. Set the gateway.cluster.config.monitor.ambari.enabled property value to true in __*{GATEWAY_HOME}*/conf/gateway-site.xml__
+1. Set the __*gateway.cluster.config.monitor.ambari.enabled*__ property value to *true* in __*{GATEWAY_HOME}*/conf/gateway-site.xml__
 2. Restart the gateway
-3. Use Ambari to modify the *hdfs-site dfs.namenode.http-address* configuration property value as described in the example.
+3. Use Ambari to modify the *hdfs-site dfs.namenode.__http-address__* configuration property value as described in the example.
 4. Allow the gateway to notice the configuration change (watch the __*{GATEWAY_HOME}*/logs/gateway.log__ for the messages)
-5. Review __*{GATEWAY_HOME}*/conf/topologies/docker-sandbox.xml__, and notice the change to the WEBHDFS service URL.
+5. Review __*{GATEWAY_HOME}*/conf/topologies/docker-sandbox.xml__, and notice the change to the *WEBHDFS* service URL.
 
-Note: Your sandbox must expose the new port you specified for the dfs.namenode.http-address property for Knox to be able to access the new endpoint; otherwise,
+Note: Your sandbox must expose the new port you specified for the __*dfs.namenode.http-address*__ property for Knox to be able to access the new endpoint; otherwise,
 even though the topology will be correct, requests will fail due to connection failure.
 
 
@@ -63,7 +63,7 @@ While it doesn't take long to describe, this feature is a significant addition t
 service configuration changes reduces the effort required (and the potential for errors) by administrators when making such changes.
 
 
-N.B., Statically-defined topologies (i.e., those deployed directly by a regular topology XML file) do NOT benefit from this monitoring support.
+__N.B., Statically-defined topologies (i.e., those deployed directly by a regular topology XML file) do NOT benefit from this monitoring support.__
 
 
 More details are available in the [User Guide](http://knox.apache.org/books/knox-0-14-0/user-guide.html).
