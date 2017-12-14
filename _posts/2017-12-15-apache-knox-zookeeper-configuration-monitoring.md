@@ -142,7 +142,7 @@ Some of the benefits of maintaining this configuration in ZooKeeper include:
 
 # Try It
 
- 0. [Docker Sandbox](https://hortonworks.com/products/sandbox) [https://hortonworks.com/downloads/#sandbox](https://hortonworks.com/downloads/#sandbox)
+ 0. [Docker Sandbox](https://hortonworks.com/products/sandbox) ([https://hortonworks.com/downloads/#sandbox](https://hortonworks.com/downloads/#sandbox))
      
  1. Ensure that ZooKeeper is running and accessible
      
