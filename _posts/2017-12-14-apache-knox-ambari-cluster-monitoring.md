@@ -53,9 +53,10 @@ continue providing the proxied *WEBHDFS* service to its clients.
 4. Allow the gateway to notice the configuration change (watch the __*{GATEWAY_HOME}*/logs/gateway.log__ for the messages)
 5. Review __*{GATEWAY_HOME}*/conf/topologies/docker-sandbox.xml__, and notice the change to the *WEBHDFS* service URL.
 
-Note: Your sandbox must expose the new port you specified for the __*dfs.namenode.http-address*__ property for Knox to be able to access the new endpoint; otherwise,
-even though the topology will be correct, requests will fail due to connection failure.
-
+'''
+Note: Your sandbox must expose the new port you specified for the dfs.namenode.http-address property for Knox to be
+able to access the new endpoint; otherwise, even though the topology will be correct, requests will fail due to connection failure.
+'''
 
 # Summary
 
