@@ -166,11 +166,13 @@ The [Remote Configuration Registry Clients](http://knox.apache.org/books/knox-0-
 If you get in a bad place with respect to ACLs and authentication errors, you can configure super user support:
 
    1. export ZK_CLASSPATH=/etc/zookeeper/conf/:/usr/hdp/current/zookeeper-server/lib/*:/usr/hdp/current/zookeeper-server/*
+
    2. java -cp $ZK_CLASSPATH org.apache.zookeeper.server.auth.DigestAuthenticationProvider super:superpwd
    
       (super:superpwd->super:G+ys1zTeJy/1iLhgQS08pRQoMvo=)
 	  
    3. SERVER_JVMFLAGS=-Dzookeeper.DigestAuthenticationProvider.superDigest=super:G+ys1zTeJy/1iLhgQS08pRQoMvo=
+
    4. Restart ZooKeeper
 
 
