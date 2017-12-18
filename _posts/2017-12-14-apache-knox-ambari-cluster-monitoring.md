@@ -1,6 +1,6 @@
 # Introduction
 
-The [Apache Knox Dynamic Service Endpoint Discovery article](https://community.hortonworks.com/articles/154912/apache-knox-dynamic-service-endpoint-discovery.html)
+My [Apache Knox Dynamic Service Endpoint Discovery article](https://community.hortonworks.com/articles/154912/apache-knox-dynamic-service-endpoint-discovery.html)
 describes some exciting new functionality available in the 0.14.0 release of Apache Knox. The gateway is now able to dynamically determine the endpoint URLs of
 cluster services to proxy from Ambari. The associated benefits are described in that article.
 

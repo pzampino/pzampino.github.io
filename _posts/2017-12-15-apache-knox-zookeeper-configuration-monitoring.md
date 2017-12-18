@@ -1,6 +1,6 @@
 # Introduction
 
-The [Apache Knox Dynamic Service Endpoint Discovery](https://community.hortonworks.com/content/kbentry/154912/apache-knox-dynamic-service-endpoint-discovery.html)
+My [Apache Knox Dynamic Service Endpoint Discovery](https://community.hortonworks.com/content/kbentry/154912/apache-knox-dynamic-service-endpoint-discovery.html)
 article introduced the gateway's new ability to dynamically generate topologies using details gleaned from cluster service configurations managed by Ambari. A
 key part of this new ability is the addition of simple topology descriptors and provider configurations as input to topology generation.
 
