@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Phil Zampino
-email: pzampino(at)gmail(dot)com
+email: pzampino(at)apache(dot)org
 description: >- # this means to ignore newlines until "baseurl:"
   Articles related to Apache Knox, the Hadoop ecosystem, Java and technology
 
@@ -33,6 +33,12 @@ plugins:
 #markdown: redcarpet
 #redcarpet:
 #  extensions: ["smart", "tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+
+defaults:
+  - scope:
+      path: "assets/img"
+    values:
+      image: true
 
 
 # Exclude from processing.
