@@ -160,14 +160,38 @@ Some of the benefits of maintaining this configuration in ZooKeeper include:
                 <role>authentication</role>
                 <name>ShiroProvider</name>
                 <enabled>true</enabled>
-                <param name="sessionTimeout" value="30"/>
-                <param name="main.ldapRealm" value="org.apache.hadoop.gateway.shirorealm.KnoxLdapRealm"/>
-                <param name="main.ldapContextFactory" value="org.apache.hadoop.gateway.shirorealm.KnoxLdapContextFactory"/>
-                <param name="main.ldapRealm.contextFactory" value="$ldapContextFactory"/>
-                <param name="main.ldapRealm.userDnTemplate" value="uid={0},ou=people,dc=hadoop,dc=apache,dc=org"/>
-                <param name="main.ldapRealm.contextFactory.url" value="ldap://localhost:33389"/>
-                <param name="main.ldapRealm.contextFactory.authenticationMechanism" value="simple"/>
-                <param name="urls./**" value="authcBasic"/>
+                <param>
+                  <name>sessionTimeout</name>
+                  <value>30</value>
+                </param>
+                <param>
+                  <name>main.ldapRealm</name>
+                  <value>org.apache.hadoop.gateway.shirorealm.KnoxLdapRealm</value>
+                </param>
+                <param>
+                  <name>main.ldapContextFactory</name>
+                  <value>org.apache.hadoop.gateway.shirorealm.KnoxLdapContextFactory</value>
+                </param>
+                <param>
+                  <name>main.ldapRealm.contextFactory</name>
+                  <value>$ldapContextFactory</value>
+                </param>
+                <param>
+                  <name>main.ldapRealm.userDnTemplate</name>
+                  <value>uid={0},ou=people,dc=hadoop,dc=apache,dc=org</value>
+                </param>
+                <param>
+                  <name>main.ldapRealm.contextFactory.url</name>
+                  <value>ldap://localhost:33389</value>
+                </param>
+                <param>
+                  <name>main.ldapRealm.contextFactory.authenticationMechanism</name>
+                  <value>simple</value>
+                </param>
+                <param>
+                  <name>urls./**</name>
+                  <value>authcBasic</value>
+                </param>
             </provider>
         </gateway>
 
