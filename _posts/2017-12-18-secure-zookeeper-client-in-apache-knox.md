@@ -1,3 +1,7 @@
+---
+title: Secure ZooKeeper Client in Apache Knox
+---
+
 # Introduction / Motivation
 
 Apache Knox 0.14.0 introduces the ability to manage topology deployments across multiple gateway instances by modifying znode contents in Apache ZooKeeper.

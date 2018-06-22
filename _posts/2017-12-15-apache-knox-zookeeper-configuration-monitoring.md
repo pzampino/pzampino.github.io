@@ -1,3 +1,7 @@
+---
+title: Apache Knox ZooKeeper Configuration Monitoring
+---
+
 # Introduction
 
 My [Apache Knox Dynamic Service Endpoint Discovery](https://community.hortonworks.com/content/kbentry/154912/apache-knox-dynamic-service-endpoint-discovery.html)
