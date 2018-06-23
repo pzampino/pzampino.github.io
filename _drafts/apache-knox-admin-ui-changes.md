@@ -1,5 +1,5 @@
 ---
-title: Apache Knox Admin UI Changes
+title: New and Improved Apache Knox Admin UI
 ---
 
 # Introduction
@@ -12,38 +12,28 @@ of topologies in Knox HA deployments by eliminating the need to copy files to mu
 The Admin UI has provided the ability to view, add, modify and delete topologies since it was created. Starting with Apache Knox 1.1.0, the ability to do the same
 for provider configurations and descriptors has been added.
 
-The Admin UI can be accessed at the following URL (where __*HOST_NAME*__ is the name of a Knox host) : https://__*HOST_NAME*__:8443/gateway/manager/admin-ui
+The Admin UI can be accessed at the following URL (where __*hostname*__ is the name of a Knox host) : __https://*hostname*:8443/gateway/manager/admin-ui__
 
-
-## Basic Navigation
-Initially, the Admin UI presents the types of resources which can be managed: __Provider Configurations__, __Descriptors__, and __Topolgies__.
-
-<img src="/assets/img/adminui-changes/adminui_initial_view.png"/>
-
-Selecting a resource type from this list yields a listing of the resources of that type in the adjacent column, and selecting a resource from that list presents
-the details of that selected resource.
-
-This post will focus on the provider configuration and descriptor resources. For these types, the __*+*__ icon next to the resource list header is the trigger for
-the respective facility for creating a new resource of that type. Modification options, including deletion, are available from the detail view for an individual resource.
+This post will focus on working with the provider configuration and descriptor resources. For these types, the <img src="/assets/img/adminui-changes/plus-icon.png" style="height:20px;vertical-align:bottom"> icon next to the resource list header presents the respective facility for creating a new resource of that type.<br>
+Modification options, including deletion, are available from the detail view for an individual resource.
 
 <br>
 
 # Provider Configurations
 
-By default, there is a provider configuration named __*default-providers*__ in the __conf/shared-providers/__ directory. That being the case, the Admin UI presents
-this default provider configuration.
+By default, there is a provider configuration named __*default-providers*__.
 
 <img src="/assets/img/adminui-changes/adminui_default-providers_view.png"/>
 
 ## Editing
 For each provider in a given provider configuration, the attributes can be modified:
 * The provider can be enabled/disabled
-* Parameters can be added (__*+*__) or removed (__*x*__)
+* Parameters can be added (<img src="/assets/img/adminui-changes/plus-icon.png" style="height:20px;vertical-align:bottom">) or removed (<img src="/assets/img/adminui-changes/x-icon.png" style="height:12px;vertical-align:middle">)
 * Parameter values can be modified (by clicking on the value)
   <img src="/assets/img/adminui-changes/adminui_edit.png"/>
 
 <br>
-To persist changes, the disk icon must be clicked. To revert *unsaved* changes, click the refresh button or simply choose another resource.
+To persist changes, the <img src="/assets/img/adminui-changes/save-icon.png" style="height:32px;vertical-align:bottom"> button must be clicked. To revert *unsaved* changes, click the  <img src="/assets/img/adminui-changes/undo-icon.png" style="height:32px;vertical-align:bottom"> button or simply choose another resource.
 <br>
 
 ## Wizards
@@ -85,9 +75,9 @@ If multiple services are configured in this way, the result is still a single HA
 <img src="/assets/img/adminui-changes/adminui_new-providerconfig_ha_summary.png"/>
 
 
-## Adding the New Provider Configuration
+## Persisting the New Provider Configuration
 
-After adding all the desired providers to the new configuration, choosing __*Ok*__ persists it.
+After adding all the desired providers to the new configuration, choosing <img src="/assets/img/adminui-changes/ok-button.png" style="height:24px;vertical-align:bottom"> persists it.
 
 Following our example, the resulting provider configuration has two providers: authentication and ha.
 
@@ -122,7 +112,7 @@ target cluster.
 
 <img src="/assets/img/adminui-changes/adminui_new-descriptor_discovery.png"/>
 
-Choosing __*Ok*__ results in the persistence of the descriptor, and subsequently, the generation and deployment of the associated topology.
+Choosing <img src="/assets/img/adminui-changes/ok-button.png" style="height:24px;vertical-align:bottom"> results in the persistence of the descriptor, and subsequently, the generation and deployment of the associated topology.
 
 <img src="/assets/img/adminui-changes/adminui_descriptor_view_discovery.png"/>
 
