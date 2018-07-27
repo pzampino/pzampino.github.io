@@ -5,7 +5,7 @@ title: New and Improved Apache Knox Admin UI
 # Introduction
 
 Apache Knox 1.0.0 added support for topology generation from simplified descriptors and shareable provider configurations. Rather than XML, these topology source
-configurations can be defined in either JSON or YAML. While these can be hand-coded and manually copied to the Knox host(s), the Knox Admin UI provides a more
+configurations can be defined in either JSON or YAML. While these can be hand-coded and manually copied to the Knox host(s), the Knox 1.1.0 Admin UI provides a more
 user-friendly facility for authoring them, which also does __not__ require ssh/scp access to the Knox host(s). Furthermore, using the Admin UI simplifies the management
 of topologies in Knox HA deployments by eliminating the need to copy files to multiple Knox hosts.
 
@@ -102,7 +102,7 @@ allows one or more supported service roles to be selected for inclusion.
 
 <img src="/assets/img/adminui-changes/adminui_new-descriptor.png"/>
 
-The provider configuration reference can entered manually, or the provider configuration selector can be used, to specify the name of an
+The provider configuration reference can be entered manually, or the provider configuration selector can be used, to specify the name of an
 existing provider configuration.
 
 <img src="/assets/img/adminui-changes/adminui_new-descriptor_providers.png"/>
@@ -127,7 +127,7 @@ be persisted in the configured ZooKeeper ensemble. Then, every Knox instance whi
 those changes, and [re]generate/[re]deploy the affected topologies. In this way, Knox HA deployments can be managed by making changes once, and from any of the
 Knox instances.
 
-More details are available in the [User Guide](http://knox.apache.org/books/knox-1-0-0/user-guide.html#Remote+Configuration+Monitor).
+More details are available in the [User Guide](http://knox.apache.org/books/knox-1-1-0/user-guide.html#Remote+Configuration+Monitor).
 
 <br>
 
