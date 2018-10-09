@@ -19,10 +19,10 @@ It essentially wraps an existing InputStream, and provides the inflating behavio
     GZIPInputStream gzipIn = new GZIPInputStream(compressedStream);
 	byte[] buffer = new byte[4096];
 	while(EOF != (n = gzipIn.read(buffer))) {
-		// handle the uncompressed data
+	  // handle the uncompressed data
 	}
 
-This is fairly straight-forward, and it works exactly as expected most of the time.
+This is fairly straight-forward, and it works exactly as expected *most of the time*.
 
 However, there are cases where [GZIPInputStream](https://docs.oracle.com/javase/8/docs/api/index.html?java/util/zip/GZIPInputStream.html) erroneously infers the end of the underlying InputStream, and it does so using the [InputStream#available()](https://docs.oracle.com/javase/8/docs/api/java/io/InputStream.html#available--) method. This method is documented to return
 
@@ -85,11 +85,11 @@ We can create an InputStream implementation that *mostly* just delegates to anot
 	      }
 	      return available;
 	    }
-		
-        /////////
-    	// The following are just the delegation implementation methods, but they are included for completeness
-		/////////
-		
+	
+    /////////
+    // The following are just the delegation implementation methods, but they are included for completeness
+    /////////
+	
 	    @Override
 	    public int read() throws IOException {
 	      return delegate.read();
@@ -145,7 +145,7 @@ Modifying the earlier example by injecting this new InputStream implementation a
 	
 	byte[] buffer = new byte[4096];
 	while(EOF != (n = gzipIn.read(buffer))) {
-		// handle the uncompressed data
+	  // handle the uncompressed data
 	}
     
 
@@ -164,9 +164,9 @@ So, +1 for the sharing of source code :-) "ipsa scientia potestas est"
 This problem and it's resolution highlights the importance of interface contracts; both the definition thereof, and the adherence thereto. Interface contracts should be clear to consumers and implementers alike, and certainly not contradictory in their descriptions.
 In this case, the InputStream#available() contract includes a subtle contradiction. A stream for which there are no bytes to be read *without blocking*, but which still has data, is in a "catch 22"; the stream is __not empty__, but there really are __zero__ bytes available for reading __without blocking__. The result of a method cannot be allowed to have two conflicting meanings.
 
-The resolution also highlights to importance and power of employing interfaces in APIs and frameworks. Because the GZIPInputStream implementation depends only on InputStream, and not some specific implementation, it was easy to replace that underlying InputStream with a custom implementation. I could have alternatively extended the InputStream class, implementing the necessary methods, but I didn't want to change any of the behavior of the actual InputStream implementation __except__ for the *available()* method. Interfaces and polymorphism are our friends.
+The resolution also highlights the importance and power of employing interfaces in APIs and frameworks. Because the GZIPInputStream implementation depends only on InputStream, and not some specific implementation, it was easy to replace that underlying InputStream with a custom implementation. I could have alternatively extended the InputStream class, implementing the necessary methods, but I didn't want to change any of the behavior of the actual InputStream implementation __except__ for the *available()* method. Interfaces and polymorphism are our friends.
 
-Finally, I spent some time trying to figure this out. Hopefully, someone else will benefit from this information without duplicating my effort.
+Finally, I spent a bit of time trying to figure all this out. Hopefully, someone else will benefit from this information without duplicating my effort.
 
 <br><br><br><br>
 
